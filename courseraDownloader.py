@@ -11,13 +11,7 @@ import cookielib
 import getpass
 from bs4 import BeautifulSoup
 
-user_agent = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36")
 
-postData = urllib.urlencode({
-        "email":"charlesgranjor@126.com",
-        "password":"zzp19950123",
-        "webrequest":"true"
-})
 class courseraDownloader(object):
 
     def __init__(self, courseName, email, passwd):
@@ -33,6 +27,8 @@ class courseraDownloader(object):
         return ''.join(random.choice(string.letters + string.digits) for i in xrange(length))
 
     def construct_headers(self):
+
+        user_agent = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36")
 
         postData = urllib.urlencode({
             "email":self.email,
